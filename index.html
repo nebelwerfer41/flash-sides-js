@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash Sides - Unione PDF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <h1>Unione di Scene PDF</h1>
+
+    <div class="center-button">
+        <button onclick="selectDirectory()">Seleziona Directory</button>
+        <input type="file" id="directoryInput" webkitdirectory multiple accept=".pdf" style="display: none;" onchange="loadDirectory()">
+    </div>
+
+    <div class="lists">
+        <div class="list available-list">
+            <h3>Scene Disponibili</h3>
+            <input type="text" id="searchInput" placeholder="Cerca scene..." oninput="searchScenes()">
+            <div id="availableScenesList" class="scene-list"></div>
+        </div>
+
+        <div class="list selected-list">
+            <h3>Scene Selezionate</h3>
+            <div class="action-buttons">
+                <button onclick="sortSelectedScenes()">Riordina Scene</button>
+                <button onclick="clearAllScenes()">Elimina Tutto</button>
+            </div>
+            <ul id="selectedScenesList" class="sortable"></ul>
+            <button onclick="mergePdfs()">Genera PDF Unito</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="pdf-lib.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

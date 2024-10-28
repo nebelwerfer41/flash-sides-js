@@ -1,0 +1,131 @@
+body {
+    font-family: Tahoma, sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.center-button {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lists {
+    display: flex;
+    gap: 20px;
+}
+
+.list {
+    flex: 0 0 50%; /* Imposta larghezza fissa al 50% e impedisce l'espansione */
+    max-width: 50%;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Include il padding nella larghezza totale */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Nasconde il contenuto che eccede la larghezza */
+}
+
+.scene-name {
+    text-overflow: ellipsis;
+}
+
+#availableScenesList {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.available-list,
+.selected-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 800px;
+
+}
+
+.available-list .scene-list,
+.selected-list .sortable {
+    flex: 1 1 auto;
+}
+
+.scene-list,
+.sortable {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-left: 0px;
+}
+
+.scene-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sortable li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #d9d9d9;
+    cursor: grab;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sortable li .scene-name {
+    flex: 1 1 0%; /* Permette al nome della scena di ridursi se necessario */
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0; /* Impedisce al pulsante di ridursi */
+}
+
+.remove-button:hover {
+    background-color: #c0392b;
+}
